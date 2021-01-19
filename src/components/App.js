@@ -3,6 +3,7 @@ import React from 'react'
 import Filters from './Filters'
 import PetBrowser from './PetBrowser'
 
+
 class App extends React.Component {
   constructor() {
     super()
@@ -25,16 +26,16 @@ class App extends React.Component {
   }
 
   onFindPetsClick = () => {
-    let endpoint = '/api/pets'
+    let endpoint = '/api/pets';
 
-    if(this.state.filters.type !== 'all'){
-      endpoint += `?type=${this.state.filters.type}`
+    if (this.state.filters.type !== 'all') {
+      endpoint += `?type=${this.state.filters.type}`;
     }
-    
+
     fetch(endpoint)
-    .then(res=> res.json())
-    .then(pets => this.setState({ pets: pets}))
-    debugger
+      .then(res => res.json())
+      .then(pets => this.setState({ pets: pets }));
+      debugger
   }
 
   onAdoptPet = (petId) => {
