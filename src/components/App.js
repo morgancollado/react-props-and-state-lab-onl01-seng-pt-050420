@@ -34,15 +34,23 @@ class App extends React.Component {
 
     fetch(endpoint)
       .then(res => res.json())
-      .then(pets => this.setState({ pets: pets }));
-      debugger
+      .then(pets => this.setState({pets: pets}))
   }
 
   onAdoptPet = (petId) => {
-    let pet = this.state.pet.find((pet) => {
+    let pet = this.state.pets.find((pet) => {
       return pet.id === petId
     })
     pet.isAdopted = true
+    this.setState({
+      pets: [...this.state.pets]
+    })
+  }
+
+  onAdoptPetii() {
+    const pets = this.state.pets
+
+    pets.find()
   }
   
   render() {
